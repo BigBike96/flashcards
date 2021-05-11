@@ -6,11 +6,12 @@ const Turn = require('../src/Turn');
 const Card = require('../src/Card');
 
 describe('Turn', () => {
-  let card, turn;
+  let card, turn, turnWrongAnswer;
 
   beforeEach(() => {
     card = new Card(1, 'What is the color of the sky?', ['blue', 'yellow', 'green'], 'blue');
     turn = new Turn('blue', card);
+    turnWrongAnswer = new Turn('yellow', card);
   });
 
   it('should be an instance of a turn', () => {
@@ -39,7 +40,15 @@ describe('Turn', () => {
   });
 
   it.skip('should be false if the user answer is false', () => {
-    expect(turn.evaluateGuess()).to.equal(false);
+    expect(turnWrongAnswer.evaluateGuess()).to.equal(false);
+  });
+
+  it.skip('should return a response for a correct user guess', () => {
+    expect(turn.giveFeedback()).to.equal('correct');
+  });
+
+  it.skip('should return a response for an incorrect answer', () => {
+    expect(turnWrongAnswer.giveFeedback()).to.equal('incorrect');
   });
 
 });
