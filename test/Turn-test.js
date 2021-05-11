@@ -43,11 +43,11 @@ describe('Turn', () => {
     expect(turnWrongAnswer.evaluateGuess()).to.equal(false);
   });
 
-  it.skip('should return a response for a correct user guess', () => {
+  it('should return a response for a correct user guess', () => {
     expect(turn.giveFeedback()).to.equal('correct');
   });
 
-  it.skip('should return a response for an incorrect answer', () => {
+  it('should return a response for an incorrect answer', () => {
     expect(turnWrongAnswer.giveFeedback()).to.equal('incorrect');
   });
 
