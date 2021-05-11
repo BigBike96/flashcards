@@ -1,1 +1,23 @@
 // TDD for turn
+const chai = require('chai');
+const expect = chai.expect;
+
+const Turn = require('../src/Turn');
+const Card = require('../src/Card');
+
+describe('Turn', () => {
+  let card, turn;
+
+  beforeEach(() => {
+    card = new Card(1, 'What is the color of the sky?', ['blue', 'yellow', 'green'], 'blue');
+    turn = new Turn('blue', card);
+  });
+
+  it('should be an instance of a turn', () => {
+    expect(turn).to.be.an.instanceof(Turn);
+  });
+
+  it('should be able to have a user inputed guess', () => {
+    expect(turn.guess).to.equal('blue');
+  });
+});
