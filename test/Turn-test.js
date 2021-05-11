@@ -26,5 +26,7 @@ describe('Turn', () => {
     expect(turn.card).to.deep.equal(card);
   });
 
-  // it.skip('')
+  it('should be able to return a user guess', () => {
+    expect(turn.returnGuess()).to.equal('blue');
+  });
 });
