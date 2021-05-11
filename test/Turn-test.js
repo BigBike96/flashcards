@@ -29,4 +29,17 @@ describe('Turn', () => {
   it('should be able to return a user guess', () => {
     expect(turn.returnGuess()).to.equal('blue');
   });
+
+  it.skip('should return the card that the guess is made on', () => {
+    expect(turn.returnCard()).to.deep.equal(card);
+  });
+
+  it.skip('should be true if the user answer matches the correct answer for the card', () => {
+    expect(turn.evaluateGuess()).to.equal(true);
+  });
+
+  it.skip('should be false if the user answer is false', () => {
+    expect(turn.evaluateGuess()).to.equal(false);
+  });
+
 });
