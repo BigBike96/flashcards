@@ -22,7 +22,9 @@ describe('Turn', () => {
   });
 
   it('should be able to have a card object', () => {
-    expect(turn.card).to.equal(card);
+    expect(turn.card).to.be.an.instanceof(Card);
+    expect(turn.card).to.deep.equal(card);
   });
-  
+
+  // it.skip('')
 });
