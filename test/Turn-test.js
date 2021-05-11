@@ -20,4 +20,9 @@ describe('Turn', () => {
   it('should be able to have a user inputed guess', () => {
     expect(turn.guess).to.equal('blue');
   });
+
+  it('should be able to have a card object', () => {
+    expect(turn.card).to.equal(card);
+  });
+  
 });
