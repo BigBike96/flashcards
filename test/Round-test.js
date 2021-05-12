@@ -41,8 +41,17 @@ describe('Round', () => {
     expect(round.returnCurrentCard).to.equal(card1);
   });
 
-  // it.skip('should be able to return the current card being played', () => {
-  //   expect(round.takeTurn())
-  // });
+  it.skip('should add a turn to the turn count', () => {
+    expect(round.takeTurn).to.equal(0);
 
+    round.takeTurn();
+
+    expect(round.takeTurn).to.equal(1);
+
+    round.takeTurn();
+
+    expect(round.takeTurn).to.equal(2);
+  });
+
+  
 });
