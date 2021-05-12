@@ -35,5 +35,14 @@ describe('Round', () => {
 
   it.skip('should start off with current turn set to null', () => {
     expect(round.currentTurn).to.equal(null);
-  })
+  });
+
+  it.skip('should be able to return the current card', () => {
+    expect(round.returnCurrentCard).to.equal(card1);
+  });
+
+  // it.skip('should be able to return the current card being played', () => {
+  //   expect(round.takeTurn())
+  // });
+
 });
