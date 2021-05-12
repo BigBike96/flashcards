@@ -61,10 +61,15 @@ describe('Round', () => {
   });
 
   it.skip('should make the next card a current card when a turn is taken', () => {
-    round.takeTurn();
+    const turn1 = round.takeTurn('red');
+
 
     expect(round.returnCurrentCard()).to.equal(card2);
   });
 
-  // it.skip('')
+  it.skip('should check the guess and give correct feedback response', () => {
+    round.takeTurn();
+
+    expect(turn1).to.equal('correct!')
+  });
 });
