@@ -69,7 +69,13 @@ describe('Round', () => {
 
   it.skip('should check the guess and give correct feedback response', () => {
     round.takeTurn();
+    // this will need to be adjusted
+    expect(turn1).to.equal('correct!');
+  });
 
-    expect(turn1).to.equal('correct!')
+  it.skip('should store id of incorrect guess', () => {
+    const turn2 = round.takeTurn('yellow');
+
+    expect(round.incorrectGuesses).to.deep.equal([1]);
   });
 });
