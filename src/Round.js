@@ -1,18 +1,24 @@
+const Turn = require('../src/Turn');
+const Card = require('../src/Card');
+
 class Round {
-  constructor() {
+  constructor(deck) {
+    this.deck = deck;
     // pass through and store deck
-    // takes in responses
-    // records if guess is incorrect
+    this.turns = 0;
     // keep track of turn count
-    // store current turn
+    this.incorrectGuesses = [];
+    // records if guess is incorrect
+    this.currentTurn = null;
   }
-  // currentCard should be first in deck at start of round
+
+  returnCurrentCard() {
+    return this.deck.cards[this.turns];
+  }
   // returnCurrentCard returns the current card being played
   // takeTurn: update turn count; use Turn class to evaluate guesses, give feedback; store incorrect guess ids
   // calculatePercentCorrect: calculate and return percent correct
   // endRound: prints  ‘** Round over! ** You answered <>% of the questions correctly!’
-
-
 }
 
 module.exports = Round;

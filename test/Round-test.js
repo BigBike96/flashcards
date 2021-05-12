@@ -1,10 +1,11 @@
+
 const chai = require('chai');
 const expect = chai.expect;
 
-const Round = ('../src/Round');
-const Deck = ('../src/Deck');
-const Card = ('../src/Card');
-const Turn = ('../src/Round');
+const Deck = require('../src/Deck');
+const Round = require('../src/Round');
+const Turn = require('../src/Round');
+const Card = require('../src/Card');
 
 describe('Round', () => {
   let card1, card2, card3, deck, round;
@@ -21,24 +22,24 @@ describe('Round', () => {
     expect(round).to.be.an.instanceof(Round);
   });
 
-  it.skip('should be able to take in a deck', () => {
-    expect(round.deck).to.deep.equal([card1, card2, card3]);
+  it('should be able to take in a deck', () => {
+    expect(round.deck).to.deep.equal(deck);
   });
 
-  it.skip('should start off with turns set at zero', () => {
+  it('should start off with turns set at zero', () => {
     expect(round.turns).to.equal(0);
   });
 
-  it.skip('should be able to store incorrect guesses', () => {
+  it('should be able to store incorrect guesses', () => {
     expect(round.incorrectGuesses).to.deep.equal([]);
   });
 
-  it.skip('should start off with current turn set to null', () => {
+  it('should start off with current turn set to null', () => {
     expect(round.currentTurn).to.equal(null);
   });
 
-  it.skip('should be able to return the current card', () => {
-    expect(round.returnCurrentCard).to.equal(card1);
+  it('should be able to return the current card', () => {
+    expect(round.returnCurrentCard()).to.equal(card1);
   });
 
   it.skip('should add a turn to the turn count', () => {
@@ -86,7 +87,7 @@ describe('Round', () => {
     expect(round.calculatePercentCorrect()).to.equal(.50);
   });
 
-  it('should return statment to user to indicate the round is over', () => {
+  it.skip('should return statment to user to indicate the round is over', () => {
     round.takeTurn('black');
     round.endRound();
 
