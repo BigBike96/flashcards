@@ -42,16 +42,29 @@ describe('Round', () => {
   });
 
   it.skip('should add a turn to the turn count', () => {
-    expect(round.takeTurn).to.equal(0);
+    expect(round.turns).to.equal(0);
 
     round.takeTurn();
 
-    expect(round.takeTurn).to.equal(1);
+    expect(round.turns).to.equal(1);
 
     round.takeTurn();
 
-    expect(round.takeTurn).to.equal(2);
+    expect(round.turns).to.equal(2);
   });
 
-  
+  it.skip('should add a turn when a guess is made', () => {
+    const guess = 'yellow';
+    round.takeTurn(guess);
+
+    expect(round.currentTurn).to.be.an.instanceof(Turn);
+  });
+
+  it.skip('should make the next card a current card when a turn is taken', () => {
+    round.takeTurn();
+
+    expect(round.returnCurrentCard()).to.equal(card2);
+  });
+
+  // it.skip('')
 });
