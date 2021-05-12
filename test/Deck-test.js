@@ -21,7 +21,7 @@ describe('Deck', () => {
   });
 
   it('should be able to hold an array of cards', () => {
-    expect(deck.cards).to.equal([card1, card2, card3]);
+    expect(deck.cards).to.deep.equal([card1, card2, card3]);
   });
 
   it('should be able to return how many cards are in the deck', () => {

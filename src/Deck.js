@@ -2,8 +2,11 @@
 // should know (return) how many cards are in the deck
 
 class Deck {
-  constructor() {
-
+  constructor(cards) {
+    this.cards = cards;
+  }
+  countCards() {
+    return this.cards.length;
   }
 }
 
