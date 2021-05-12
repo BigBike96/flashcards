@@ -85,4 +85,11 @@ describe('Round', () => {
 
     expect(round.calculatePercentCorrect()).to.equal(.50);
   });
+
+  it('should return statment to user to indicate the round is over', () => {
+    round.takeTurn('black');
+    round.endRound();
+
+    expect(round.endRound()).to.equal(`** Round over! ** You answered <>% of the questions correctly!`);
+  });
 });
