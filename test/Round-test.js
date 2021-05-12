@@ -68,7 +68,7 @@ describe('Round', () => {
   });
 
   it.skip('should check the guess and give correct feedback response', () => {
-    round.takeTurn();
+    round.takeTurn('blue');
     // this will need to be adjusted
     expect(turn1).to.equal('correct!');
   });
@@ -77,5 +77,12 @@ describe('Round', () => {
     const turn2 = round.takeTurn('yellow');
 
     expect(round.incorrectGuesses).to.deep.equal([1]);
+  });
+
+  it.skip('should calculate and return percent of correct guesses', () => {
+    round.takeTurn('black');
+    round.takeTurn('brown');
+
+    expect(round.calculatePercentCorrect()).to.equal(.50);
   });
 });
