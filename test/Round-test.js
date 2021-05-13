@@ -63,13 +63,6 @@ describe('Round', () => {
     expect(round.returnCurrentCard()).to.equal(card2);
   });
 
-  it('should evaluate the guess and return appropiate feedback', () => {
-    const turn1 = round.takeTurn('black');
-
-    expect(turn1).to.equal('correct!');
-    expect(round.returnCurrentCard()).to.equal(card2);
-  });
-
   it('should store id of incorrect guess', () => {
     const turn2 = round.takeTurn('yellow');
 
@@ -80,7 +73,7 @@ describe('Round', () => {
     round.takeTurn('black');
     round.takeTurn('9');
 
-    expect(round.calculatePercentCorrect()).to.equal(.50);
+    expect(round.calculatePercentCorrect()).to.equal(50);
   });
 
   it('should return statment to user to indicate the round is over', () => {

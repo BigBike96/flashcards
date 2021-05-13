@@ -14,20 +14,10 @@ class Turn {
 
   evaluateGuess() {
     return this.guess === this.card.correctAnswer;
-    // if (this.guess === this.card.correctAnswer) {
-    //   return true;
-    // } else {
-    //   return false;
-    // }
   }
 
   giveFeedback() {
     return this.evaluateGuess() ? 'correct' : 'incorrect';
-    // if (this.evaluateGuess()) {
-    //   return 'correct';
-    // } else {
-    //   return 'incorrect';
-    // }
   }
 }
 
