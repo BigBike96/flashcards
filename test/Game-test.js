@@ -13,8 +13,16 @@ describe('Game', () => {
   });
 
   it.skip('should have a way to keep track of current round', () => {
-  const game = new Game();
+    const game = new Game();
 
-  expect(game.currentRound).to.equal(null);
+    expect(game.currentRound).to.equal(null);
+  });
+
+  it.skip('should have a new instance of round after the game has started', () => {
+    const game = new Game();
+
+    game.start();
+
+    expect(game.currentRound).to.be.an.instanceof(Round);
   });
 });
