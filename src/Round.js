@@ -18,7 +18,6 @@ class Round {
       this.incorrectGuesses.push(this.returnCurrentCard().id);
     }
     this.turns++;
-    console.log(guess);
     return this.currentTurn.giveFeedback();
   }
 
