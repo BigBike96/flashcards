@@ -11,4 +11,10 @@ describe('Game', () => {
 
     expect(game).to.be.an.instanceof(Game);
   });
+
+  it.skip('should have a way to keep track of current round', () => {
+  const game = new Game();
+
+  expect(game.currentRound).to.equal(null);
+  });
 });
