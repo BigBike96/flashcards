@@ -18,11 +18,12 @@ class Round {
       this.incorrectGuesses.push(this.returnCurrentCard().id);
     }
     this.turns++;
+    console.log(guess);
     return this.currentTurn.giveFeedback();
   }
 
   calculatePercentCorrect() {
-    return this.incorrectGuesses.length / this.turns;
+    return (this.turns - this.incorrectGuesses.length) / this.turns * 100;
   }
 
   endRound() {
